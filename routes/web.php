@@ -20,3 +20,4 @@ Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
 });
 
+Route::get('companyUsers/{id}', ['uses' => 'CompanyController@companyUsers', 'as' => 'companyUsers']);

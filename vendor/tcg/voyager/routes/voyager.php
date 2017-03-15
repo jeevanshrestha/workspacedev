@@ -30,7 +30,6 @@ Route::group(['as' => 'voyager.'], function () {
 
         Route::get('profile', ['uses' => $namespacePrefix.'VoyagerController@profile', 'as' => 'profile']);
 
-        Route::get('companyUsers/{id}', ['uses' => 'CompanyController@companyUsers', 'as' => 'companyUsers']);
 
         try {
             foreach (DataType::all() as $dataType) {
