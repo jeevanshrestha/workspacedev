@@ -15,6 +15,8 @@ class UserController extends Voy\VoyagerBreadController
     {
         $userData 	= json_encode(User::where('company_id',$id)->get());
 
-        echo json_encode($userData);
+      //  echo json_encode($userData);
+
+        return  response()->json($userData);
     }
 }
