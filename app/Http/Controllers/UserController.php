@@ -10,4 +10,11 @@ use App\User as User;
 class UserController extends Voy\VoyagerBreadController
 {
     //
+
+    public function usersbycompany(Request $request, $id)
+    {
+        $userData 	= json_encode(User::where('company_id',$id)->get());
+
+        echo json_encode($userData);
+    }
 }
