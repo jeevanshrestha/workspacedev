@@ -375,6 +375,7 @@ class ComposerStaticInit1281ea9c26db28c3155643a0bc4ef93e
         'AfterSaveFormController' => __DIR__ . '/..' . '/distilleries/form-builder/tests/Trait/TraitTestCase.php',
         'App\\Company' => __DIR__ . '/../..' . '/app/Company.php',
         'App\\Console\\Kernel' => __DIR__ . '/../..' . '/app/Console/Kernel.php',
+        'App\\Datatables\\CompanyDatatable' => __DIR__ . '/../..' . '/app/Datatables/PostDatatable.php',
         'App\\Exceptions\\Handler' => __DIR__ . '/../..' . '/app/Exceptions/Handler.php',
         'App\\Http\\Controllers\\Auth\\ForgotPasswordController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/ForgotPasswordController.php',
         'App\\Http\\Controllers\\Auth\\LoginController' => __DIR__ . '/../..' . '/app/Http/Controllers/Auth/LoginController.php',
