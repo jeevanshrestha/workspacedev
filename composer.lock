@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "f0720c90ea03db8b8af0c5fcfc0a735e",
+    "content-hash": "e73b5ead631419e7b379ea8509cd40f6",
     "packages": [
         {
             "name": "arrilot/laravel-widgets",
@@ -55,59 +55,6 @@
                 "widgets"
             ],
             "time": "2017-01-26T18:04:00+00:00"
-        },
-        {
-            "name": "distilleries/form-builder",
-            "version": "2.9.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/Distilleries/FormBuilder.git",
-                "reference": "1ac7b883669f42bd348d8f412947b74d08af6c2f"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Distilleries/FormBuilder/zipball/1ac7b883669f42bd348d8f412947b74d08af6c2f",
-                "reference": "1ac7b883669f42bd348d8f412947b74d08af6c2f",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/filesystem": "5.4.*",
-                "illuminate/support": "5.4.*",
-                "kris/laravel-form-builder": "1.6.12",
-                "php": ">=5.6.4"
-            },
-            "require-dev": {
-                "fzaninotto/faker": "1.6.*",
-                "mockery/mockery": "0.9.*",
-                "orchestra/database": "3.4.*",
-                "orchestra/testbench": "3.4.*",
-                "orchestra/testbench-browser-kit": "3.4.*",
-                "phpunit/phpunit": "~5.7"
-            },
-            "type": "library",
-            "autoload": {
-                "classmap": [
-                    "tests"
-                ],
-                "psr-4": {
-                    "Distilleries\\FormBuilder\\": "src/Distilleries/FormBuilder"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Maxime Francois",
-                    "email": "kezho@me.com"
-                }
-            ],
-            "description": "Based on laravel-form-builder (https://github.com/kristijanhusak/laravel-form-builder). That add default component and add view system.",
-            "time": "2017-02-23T12:12:13+00:00"
         },
         {
             "name": "dnoegel/php-xdg-base-dir",
@@ -917,59 +864,6 @@
             "time": "2015-04-20T18:58:01+00:00"
         },
         {
-            "name": "kris/laravel-form-builder",
-            "version": "1.6.12",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/kristijanhusak/laravel-form-builder.git",
-                "reference": "7d4f941b6eeb14f091019263f7cadfb6c73dd5c2"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/kristijanhusak/laravel-form-builder/zipball/7d4f941b6eeb14f091019263f7cadfb6c73dd5c2",
-                "reference": "7d4f941b6eeb14f091019263f7cadfb6c73dd5c2",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/database": "5.*@dev",
-                "laravelcollective/html": "5.*",
-                "php": ">=5.4.0"
-            },
-            "require-dev": {
-                "mockery/mockery": "0.9.*",
-                "phpunit/phpunit": "~4.0"
-            },
-            "type": "library",
-            "extra": {
-                "branch-alias": {
-                    "dev-master": "1.6.x-dev"
-                }
-            },
-            "autoload": {
-                "psr-0": {
-                    "Kris\\LaravelFormBuilder": "src/"
-                },
-                "classmap": [
-                    "tests/FormBuilderTestCase.php"
-                ],
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Kristijan Husak",
-                    "email": "husakkristijan@gmail.com"
-                }
-            ],
-            "description": "Laravel form builder - symfony like",
-            "time": "2015-07-13T07:23:50+00:00"
-        },
-        {
             "name": "larapack/doctrine-support",
             "version": "v0.1.1",
             "source": {
@@ -1200,60 +1094,6 @@
                 "psysh"
             ],
             "time": "2016-12-30T18:13:17+00:00"
-        },
-        {
-            "name": "laravelcollective/html",
-            "version": "v5.4.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/LaravelCollective/html.git",
-                "reference": "7570f25d58a00fd6909c0563808590f9cdb14d47"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/LaravelCollective/html/zipball/7570f25d58a00fd6909c0563808590f9cdb14d47",
-                "reference": "7570f25d58a00fd6909c0563808590f9cdb14d47",
-                "shasum": ""
-            },
-            "require": {
-                "illuminate/http": "5.4.*",
-                "illuminate/routing": "5.4.*",
-                "illuminate/session": "5.4.*",
-                "illuminate/support": "5.4.*",
-                "illuminate/view": "5.4.*",
-                "php": ">=5.6.4"
-            },
-            "require-dev": {
-                "illuminate/database": "5.4.*",
-                "mockery/mockery": "~0.9.4",
-                "phpunit/phpunit": "~5.4"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "Collective\\Html\\": "src/"
-                },
-                "files": [
-                    "src/helpers.php"
-                ]
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Taylor Otwell",
-                    "email": "taylorotwell@gmail.com"
-                },
-                {
-                    "name": "Adam Engebretson",
-                    "email": "adam@laravelcollective.com"
-                }
-            ],
-            "description": "HTML and Form Builders for the Laravel Framework",
-            "homepage": "http://laravelcollective.com",
-            "time": "2017-01-26T19:27:05+00:00"
         },
         {
             "name": "league/flysystem",

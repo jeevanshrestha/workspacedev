@@ -169,8 +169,7 @@ return [
         Laravel\Tinker\TinkerServiceProvider::class,
         TCG\Voyager\VoyagerServiceProvider::class,
         Way\Generators\GeneratorsServiceProvider::class,
-        Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class,
-        Distilleries\FormBuilder\FormBuilderServiceProvider::class,
+        Xethron\MigrationsGenerator\MigrationsGeneratorServiceProvider::class, 
         /*
          * Application Service Providers...
          */
@@ -227,9 +226,7 @@ return [
         'Storage' => Illuminate\Support\Facades\Storage::class,
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
-        'View' => Illuminate\Support\Facades\View::class,
-        'FormBuilder' => Distilleries\FormBuilder\Facades\FormBuilder::class
-
+        'View' => Illuminate\Support\Facades\View::class, 
     ],
 
 ];
