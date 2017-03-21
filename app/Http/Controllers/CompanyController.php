@@ -38,15 +38,8 @@ class CompanyController extends Voy\VoyagerBreadController {
             $view = "voyager::$slug.read";
         }
 
-        return view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
+        return view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable','id'));
     }
-
-    public function companyUsers(Request $request, $id)
-    {
-	     $userData 	= json_encode(User::where('company_id',$id)->get());
-
-	     echo json_encode($userData);
-    }
-
+ 
 
 }
