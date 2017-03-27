@@ -6,6 +6,7 @@ use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as AuthUser;
 use TCG\Voyager\Traits\VoyagerUser;
 use App\Company; 
+use DB;
 
 class User extends AuthUser
 {
@@ -24,9 +25,25 @@ class User extends AuthUser
         parent::save();
     }
 
+
+    public function companyId(){
+    return $this->belongsTo(Company::class);
+    }
+
+    public function roleId(){
+    return $this->belongsTo(Role::class);
+    }
+
+
     public function company()
     {
         return $this->belongsTo(Company::class);
+    }
+
+
+    public function role()
+    {
+        return $this->belongsTo(Role::class);
     }
 
 
@@ -35,5 +52,13 @@ class User extends AuthUser
         $this->attributes['created_at'] = Carbon::parse($value)->format('Y-m-d H:i:s');
     }
 
+    public static  function getUserRole($id)
+    {
+        $user_role =    DB::table('users')
+                        ->join('roles', 'roles.id', '=', 'users.role_id')->select('display_name')
+                        ->where('users.id', '=', $id)->first();
+
+        return $user_role->display_name;
+    }
 
 }

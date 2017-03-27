@@ -7,10 +7,58 @@ use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers as Voy;
 use App\CompanyAttachment;
 use Illuminate\Support\Facades\Storage;
+use Auth;
+use DB;
+use TCG\Voyager\Models\User;
 
 class CompanyAttachmentController extends Voy\VoyagerBreadController
 {
     //
+  public function index(Request $request)
+    {
+        // GET THE SLUG, ex. 'posts', 'pages', etc.
+        $slug = $this->getSlug($request);
+
+        // GET THE DataType based on the slug
+        $dataType = Voyager::model('DataType')->where('slug', '=', $slug)->first();
+
+        // Check permission
+        Voyager::canOrFail('browse_'.$dataType->name);
+
+        $getter = $dataType->server_side ? 'paginate' : 'get';
+
+        // Next Get or Paginate the actual content from the MODEL that corresponds to the slug DataType
+
+        $role = User::getUserRole(Auth::id());
+         if (strlen($dataType->model_name) != 0) {
+            $model = app($dataType->model_name);
+
+            $relationships = $this->getRelationships($dataType);
+
+            if ($model->timestamps) {
+                $dataTypeContent = call_user_func([$model->with($relationships)->latest(), $getter]);
+            } else {
+                $dataTypeContent = call_user_func([$model->with($relationships)->orderBy('id', 'DESC'), $getter]);
+            }
+
+            //Replace relationships' keys for labels and create READ links if a slug is provided.
+            $dataTypeContent = $this->resolveRelations($dataTypeContent, $dataType);
+        } else {
+            // If Model doesn't exist, get data from table name
+            $dataTypeContent = call_user_func([DB::table($dataType->name), $getter]);
+        }
+
+        // Check if BREAD is Translatable
+        $isModelTranslatable = isBreadTranslatable($model);
+
+        $view = 'voyager::bread.browse';
+
+        if (view()->exists("voyager::$slug.browse")) {
+            $view = "voyager::$slug.browse";
+        }
+
+        return view($view, compact('dataType', 'dataTypeContent', 'isModelTranslatable'));
+    }
 
   // POST BRE(A)D
     public function store(Request $request)
@@ -89,7 +137,8 @@ class CompanyAttachmentController extends Voy\VoyagerBreadController
 
     public function attachmentsbycompany(Request $request, $id)
     {
-        $attachmentData 	= CompanyAttachment::where('company_id',$id)->get();
+        $attachmentData = DB::table('company_attachments')->select('id','subject', 'attachment', 'mime_type')->get();
+      //  $attachmentData 	= CompanyAttachment::where('company_id',$id)->get();
 
       //  echo json_encode($userData);
 

@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use TCG\Voyager\Facades\Voyager;
 use TCG\Voyager\Http\Controllers as Voy;
 use App\User as User;
+use Carbon\Carbon;
 class CompanyController extends Voy\VoyagerBreadController {
 
 	 

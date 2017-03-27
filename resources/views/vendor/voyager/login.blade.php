@@ -53,7 +53,12 @@
         <div class="col-xs-12 col-sm-4 col-md-3 login-sidebar animated fadeInRightBig">
 
             <div class="login-container animated fadeInRightBig">
- 
+
+                @if (session('status'))
+                <div class="alert alert-success fade in alert-dismissable">
+                    {{ session('status') }}
+                </div>
+                @endif
                 <h2>Sign In Below:</h2>
 
                 <form action="{{ route('voyager.login') }}" method="POST">
@@ -71,7 +76,9 @@
                   <span class="bar"></span>
                   <label><i class="glyphicon glyphicon-lock"></i><span class="span-input"> Password</span></label>
                 </div>
-
+                <div class="group">      
+                 &nbsp; <a href="/admin/password/reset"> Forgot Password?</a>
+                </div>
                 <button type="submit" class="btn btn-block login-button">
                     <span class="signingin hidden"><span class="glyphicon glyphicon-refresh"></span> Loggin in...</span>
                     <span class="signin">Login</span>

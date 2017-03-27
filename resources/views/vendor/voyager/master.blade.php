@@ -135,8 +135,7 @@ if ((substr(Auth::user()->avatar, 0, 7) == 'http://') || (substr(Auth::user()->a
 <script type="text/javascript" src="{{ config('voyager.assets_path') }}/js/datetimepicker/bootstrap-datetimepicker.min.js"></script>
 
     <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/jquery.bootstrapvalidator/0.5.3/js/bootstrapValidator.js"></script>
-    
-      <script src="http://ajax.microsoft.com/ajax/jquery.templates/beta1/jquery.tmpl.min.js"></script>
+     
 <!-- Javascript -->
 <script type="text/javascript" src="{{ config('voyager.assets_path') }}/js/readmore.min.js"></script>
 <script type="text/javascript" src="{{ config('voyager.assets_path') }}/js/app.js"></script>

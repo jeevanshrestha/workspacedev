@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('voyager.login');;
 });
 
 
@@ -22,5 +22,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('usersbycompany/{id}', ['uses' => 'UserController@usersbycompany', 'as' => 'usersbycompany']);
     Route::get('attachmentsbycompany/{id}', ['uses' => 'CompanyAttachmentController@attachmentsbycompany', 'as' => 'attachmentsbycompany']);
     Route::get('generateattachments/{id}', ['uses' => 'CompanyAttachmentController@generateattachments', 'as' => 'generateattachments']); 
+	Auth::routes();
 });
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});
+
+ 
